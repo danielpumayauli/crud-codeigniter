@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteBase /peliculas/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?$1 [L]
+	AddDefaultCharset UTF-8
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+	ErrorDocument  404 /index.php
+</IfModule>
